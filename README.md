@@ -211,7 +211,7 @@ RETURN _check
    - Orders are split 49.42% Male and 50.58% Female, with North America (62.31%), Europe (33.01%), and Australia (4.68%) mirroring revenue distribution.
 
 
-<img width="1422" height="798" alt="Retailer_2" src="https://github.com/user-attachments/assets/521435b6-fb70-4cc0-81ea-1468c0d70ad1" />
+<img width="1416" height="787" alt="Retailer_2" src="https://github.com/user-attachments/assets/6f945fdc-d9a3-40eb-a15b-1a418ac223d6" />
 
 
    - Computers (14,025), Cell Phones (10,158), and Music, Movies & Audio (9,169) lead, with subcategories like Desktops (6,447) and Laptops (1,600) showing specific demand.
