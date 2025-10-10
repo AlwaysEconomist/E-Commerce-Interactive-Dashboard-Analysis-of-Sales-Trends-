@@ -209,11 +209,6 @@ RETURN _check
 
    - Total orders are 62,884 (12.8% vs. PY), average order value is $887 (0.6% decrease vs. PY), average delivery days are 4.5 (1.9% improvement vs. PY), and average price is $356.03 (no change vs. PY).
    - Orders are split 49.42% Male and 50.58% Female, with North America (62.31%), Europe (33.01%), and Australia (4.68%) mirroring revenue distribution.
-
-
-<img width="1416" height="787" alt="Retailer_2" src="https://github.com/user-attachments/assets/6f945fdc-d9a3-40eb-a15b-1a418ac223d6" />
-
-
    - Computers (14,025), Cell Phones (10,158), and Music, Movies & Audio (9,169) lead, with subcategories like Desktops (6,447) and Laptops (1,600) showing specific demand.
    - Total customers are 15,266, with 11,887 active (5.0% vs. PY) and 3,379 inactive (14.3% vs. PY), equating to 22.13% inactivity.
    - The 24-44 age group is the largest active segment, while 75-95 shows higher inactivity
