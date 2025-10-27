@@ -1,6 +1,7 @@
 
 
-<img width="1406" height="790" alt="Screenshot 2025-09-22 114800" src="https://github.com/user-attachments/assets/cd008c44-5a20-45cc-a64e-7c6685e5052e" />
+<img width="1401" height="791" alt="Retailer_1" src="https://github.com/user-attachments/assets/a037d2e0-faac-4504-b2b7-686774cb3afe" />
+
 
 
 
@@ -202,8 +203,9 @@ RETURN _check
    - Revenue is concentrated in Europe (38.29%) and North America (61.71%), with minimal contribution from Australia (4.69%), indicating key markets.
    - Revenue peaks in January and November, with a notable dip in April, pointing to seasonal trends.
    - USA leads, followed by UK, Germany, Canada, and others, showing a strong North American and European customer base.
-     
-  <img width="1406" height="790" alt="Screenshot 2025-09-22 114800" src="https://github.com/user-attachments/assets/bf06bef6-9116-4803-b176-8f17ba5160e2" />
+   
+     <img width="1401" height="791" alt="Retailer_1" src="https://github.com/user-attachments/assets/85b3b8b6-54bb-4fc5-82de-f2c8d4dc645f" />
+
 
 
 
