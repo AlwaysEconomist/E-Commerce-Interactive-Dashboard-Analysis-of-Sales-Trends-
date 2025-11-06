@@ -1,16 +1,15 @@
+# Revenue Trends Dashboard Analysis
+
+
+
 
 
 <img width="1401" height="791" alt="Retailer_1" src="https://github.com/user-attachments/assets/a037d2e0-faac-4504-b2b7-686774cb3afe" />
 
 
 
-
-
-
-
 ## Table of Contents
 - [Project Overview](#project-overview)
-- [Data Cleaning/Preparation](#data-cleaningpreparation)
 - [Insights](#analysis-visualization-and-insights)
 - [Business Meaning](#business-meaning)
 - [Recommendations](#recommendations)
@@ -20,178 +19,7 @@
 In a competitive business landscape, many retailers drown in data but starve for insights, wasting time and money on guesswork instead of growth. The Global Electronic Retailer Dashboard, built in Power BI, fixes this by turning raw numbers into a clear, simple and interactive visual dashboard that spots trends by category, country, or month, and drives revenue with targeted actions for smart decisions.  
 
 
-
-
-## Data Cleaning/Preparation
-
-- Power Query :
-    - Customers Table 
-<img width="1919" height="1075" alt="Screenshot 2025-09-14 063031" src="https://github.com/user-attachments/assets/7eab1624-d81e-443e-b96d-02085e724010" />
-
-  - Products Table 
-<img width="1917" height="1079" alt="Screenshot 2025-09-14 063049" src="https://github.com/user-attachments/assets/2d2bee96-eff9-4d3a-9e85-e616bd7edaf5" />
-
-  - Sales Table
-<img width="1919" height="1069" alt="Screenshot 2025-09-14 063111" src="https://github.com/user-attachments/assets/03e4b804-814f-4cde-9ee7-e705fa04916c" />
-
-  - Date Table using DAX
-<img width="1913" height="1050" alt="image" src="https://github.com/user-attachments/assets/26629456-adfb-4e21-8629-2a3ce5541dfe" />
-
-  - Data model, star schema to create relationships betwenn tables.
-<img width="1917" height="1061" alt="image" src="https://github.com/user-attachments/assets/8dafd60b-ffac-4fa0-bc2c-5c7a37a921e6" />
-
-- DAX calculations.
-  - Mains Measures
-```
- - Revenue = 
-SUMX(
-    Sales,
-    Sales[Quantity] * RELATED(Products[Unit Price USD])
-    )
-
- - Profit = [Revenue] - [COGS]
-
- - Avg Delivery Days = 
-AVERAGEX(
-    Sales, 
-    DATEDIFF(
-        Sales[Order Date],
-         Sales[Delivery Date],
-          DAY
-          )
-          
-    )
-
- - Avg Order Value = 
-DIVIDE(
-    [Revenue], 
-    [Total orders],
-    0 
-     )
-
-  - Total Customers = 
- COUNTROWS(
-    Customers
-    )
-
-
-
-```
-
-
-  - Previous Year Measures
-
-```
- - PY Revenue = 
-CALCULATE(
-    [Revenue], 
-    SAMEPERIODLASTYEAR(
-        'Date Table'[Date]
-    )
-)
-
-
-- PY COGS = 
-CALCULATE(
-    [COGS], 
-    SAMEPERIODLASTYEAR(
-        'Date Table'[Date]
-    )
-)
-
-```
-
-   - vs Previous Year Measures
-
-```
-  - vs PY Profit Margin = 
-VAR _CM = [Profit Margin]
-VAR _PY = [PY Profit Margin]
-VAR _perc = DIVIDE(_CM - _PY, _PY)
-VAR _format = 
-SWITCH(
-    TRUE(),
-    _perc > 0, UNICHAR(11165) & " " & FORMAT(_perc, "0.0%"),
-    _perc < 0, UNICHAR(11167) & " " & FORMAT(_perc * -1, "0.0%"),
-    FORMAT(_perc, "0.0%")
-)
-RETURN _format
-
-
-  - vs PY Avg Price = 
-VAR _CM = [Avg Price]
-VAR _PY = [PY Avg Price]
-VAR _perc = DIVIDE(_CM - _PY, _PY)
-VAR _format = 
-SWITCH(
-    TRUE(),
-    _perc > 0, UNICHAR(11165) & " " & FORMAT(_perc, "0.0%"),
-    _perc < 0, UNICHAR(11167) & " " & FORMAT(_perc * -1, "0.0%"),
-    FORMAT(_perc, "0.0%")
-)
-RETURN _format
-
-```
-
-   - Color Formatting Measures
-
-```
-  - CF PY AOV = 
-VAR _CM = [Avg Order Value]
-VAR _PY = [PY AOV]
-VAR _perc = DIVIDE(_CM - _PY, _PY)
-VAR _format = 
-SWITCH(
-    TRUE(),
-    _perc > 0, "DarkGreen",
-    _perc < 0, "DarkRed",
-    "Gray"
-)
-RETURN _format
-
-  - CF PY Unit Sold = 
-VAR _CM = [Unit Sold]
-VAR _PY = [PY Unit Sold]
-VAR _perc = DIVIDE(_CM - _PY, _PY)
-VAR _format = 
-SWITCH(
-    TRUE(),
-    _perc > 0, "DarkGreen",
-    _perc < 0, "DarkRed",
-    "Gray"
-)
-RETURN _format
-
-
-- Max_Value_%_Customers = 
-VAR _max_value = 
-MAXX(
-    ALL('Date Table'[MonthNumber]),
-    [% Inac. Customers]
-)
-
-VAR _check = IF(_max_value = [% Inac. Customers], [% Inac. Customers], BLANK())
-RETURN _check
-
-  - Min_Value_COGS = 
-VAR _min_value = 
-MINX(
-    ALL('Date Table'[MonthNumber]),
-    [COGS]
-)
-
-VAR _check = IF(_min_value = [COGS], [COGS], BLANK())
-RETURN _check
-```
-    
-
-- Power Point: Background Wireframe 
-<img width="4663" height="2671" alt="Picture_p" src="https://github.com/user-attachments/assets/559c38c9-68b1-44a2-92b4-f0e6746c5958" />
-
-
-
 ## Analysis, Visualization and Insights
-
 
  - The Power BI dashboard provides the following insights :
 
@@ -205,8 +33,6 @@ RETURN _check
    - USA leads, followed by UK, Germany, Canada, and others, showing a strong North American and European customer base.
    
 <img width="1401" height="791" alt="Retailer_1" src="https://github.com/user-attachments/assets/85b3b8b6-54bb-4fc5-82de-f2c8d4dc645f" />
-
-
 
 
    - Total orders are 62,884 (12.8% vs. PY), average order value is $887 (0.6% decrease vs. PY), average delivery days are 4.5 (1.9% improvement vs. PY), and average price is $356.03 (no change vs. PY).
@@ -224,10 +50,6 @@ RETURN _check
 <img width="1409" height="777" alt="Screenshot 2025-09-22 114846" src="https://github.com/user-attachments/assets/66ac3fd7-bf6e-41bc-ab8f-ba1bdc2ac18f" />
 
 
-
-     
-
-
  ## Business Meaning
  
 - The consistent growth in revenue, units sold, and profit suggests effective sales strategies and market demand. Stable profit margins indicate good cost management.
@@ -240,8 +62,6 @@ RETURN _check
 - Younger age groups (24-44) are more engaged, suggesting targeted retention for older demographics.
 - Regional activity patterns reinforce the focus on North America and Europe for customer engagement.
 - High-performing product categories (Computers, Home Appliances, Cell Phones) and specific products (desktops, televisions) highlight areas of strength to maintain or expand and prioritize stock and promotions..
-
-
 
 
 ## Recommendations
