@@ -16,7 +16,7 @@
 
 
 ## Project Overview
-In a competitive business landscape, many retailers drown in data but starve for insights, wasting time and money on guesswork instead of growth. The Global Electronic Retailer Dashboard, built in Power BI, fixes this by turning raw numbers into a clear, simple and interactive visual dashboard that spots trends by category, country, or month, and drives revenue with targeted actions for smart decisions.  
+In a competitive business landscape, many retailers drown in data but starve for insights, wasting time and money on guesswork instead of growth. The Global Electronic Retailer Dashboard, built in Power BI for the finance team as a Power BI Developer, fixes this by turning raw numbers into a clear, simple and interactive visual dashboard that spots trends by category, country, or month, and drives revenue with targeted actions for smart decisions.  
 
 
 ## Analysis, Visualization and Insights
